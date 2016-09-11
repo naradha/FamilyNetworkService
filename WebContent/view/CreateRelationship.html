@@ -1,0 +1,15 @@
+<div>
+	<div>
+		<input type="search" name="search" ng-model="searchString">
+	    <input type="submit" value="search" ng-click="searchUsers()">
+    </div>
+    <div ng-show="searchResult	">
+	    Result:
+	    <div ng-repeat="(personId, person) in searchResult">
+	    	<span><a href="#/user/profile/{{personId}}">{{person.userInfo.firstName}} {{person.userInfo.lastName}}</a></span>
+	    	<span> <button type="button" ng-click="createRelationship(personId, 'PARENT')"> Add as Parent</button></span>
+	    	<span> <button type="button" ng-click="createRelationship(personId, 'SPOUSE')"> Add as Spouse</button></span>
+	    	<span> <button type="button" ng-click="createRelationship(personId, 'CHILD')"> Add as Child</button></span>
+	    </div>
+    </div>
+</div>

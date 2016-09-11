@@ -1,0 +1,16 @@
+<div>
+<form name="form">
+	<div>
+		<label class="span2">Email</label>
+		<input ng-class="{error: form.id.$invalid}" type="text" ng-model="id" required/>
+	</div>
+	<div>
+		<label class="span2">Password</label>
+		<input ng-class="{error: form.password.$invalid}" type="text" ng-model="password" required/>
+	</div>
+	<div>
+		<button type='submit' value='submit' ng-click='login()'>Login</button>
+		<div ng-if="error" class="alert alert-danger">{{error}}</div>
+	</div>
+</form>
+</div>

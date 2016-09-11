@@ -1,0 +1,51 @@
+<div>
+	<div>
+    	<span style="float:left;"><a href='#/create/relationship/{{personId}}'>Add relationship</a></span>
+    	<span style="float:right;"><a href='#/create/person'>Create new person</a></span>
+    </div>
+    <div>
+		<ng-include src="'/FamilyNetworkService/view/FamilyGraph.html'" ng-controller=familyGraph></ng-include>
+   </div>
+	   <div>
+		<div style="float:left; width: 200px; margin: 10px">
+			<img src="/FamilyNetworkService/family/relationshipGraph/get/profile/picture/{{personId}}" height="200" width="200"/>
+		</div>
+		
+		<div style="float:left; margin: 10px">
+		
+			<div>
+				<b>Name: </b>{{user.userInfo.firstName}} {{user.userInfo.lastName}}
+			</div>
+			<div>
+				<b>Gender: </b>{{user.userInfo.gender}}
+			</div>
+			<div>
+				<h3> Relations </h3>
+				<div>
+					<div>Parents</div>
+						<div ng-repeat="parent in user.relationships | filter: {relationshipType:'PARENT'}">
+							<mini-profile id='parent.relatedPersonId' details='user.relationInfo[parent.relatedPersonId]' />
+						</div>
+				</div>
+				<hr/>
+				<div>
+					<div>Spouse</div>
+						<div ng-repeat="parent in user.relationships | filter: {relationshipType:'SPOUSE'}">
+							<mini-profile id='parent.relatedPersonId' details='user.relationInfo[parent.relatedPersonId]' />
+						</div>
+				</div>
+				<hr/>
+				<div>
+					<div>Children</div>
+						<div ng-repeat="parent in user.relationships | filter: {relationshipType:'CHILD'}">
+							<mini-profile id='parent.relatedPersonId' details='user.relationInfo[parent.relatedPersonId]' />
+						</div>
+				</div>
+				<hr/>
+			</div>
+		</div>
+		
+		
+	</div>
+	
+</div>

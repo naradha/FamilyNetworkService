@@ -1,0 +1,39 @@
+<div>
+	<h2>Enter details:</h2>
+	<form name="form">
+	
+	
+	<div>
+		<label class="span2">First Name</label>
+		<input type="text" ng-model="userInfo.firstName" required/>
+	</div>
+	<div>
+		<label class="span2">Last Name</label>
+		<input type="text" ng-model="userInfo.lastName" required/>
+	</div>
+	<div>
+		<label class="span2">Last Name</label>
+		<input type="email" ng-model="credential.username" required/>
+	</div>
+	<div>
+		<label class="span2">Password</label>
+		<input type="password" ng-model="credential.password" required/>
+	</div>
+	<div>
+		<label class="span2">Gender</label>
+		<select ng-model="userInfo.gender" required>
+			<option value="MALE">Male</option>
+			<option value="FEMALE">Female</option>
+		</select>
+	</div>
+	
+	<div>
+		<label class="span2">Profile picture</label>
+	<input type="file" file-upload="profilePicture"/>
+	</div>
+	
+	<div>
+		<button type='submit' value='submit' ng-click='createPerson()'>Create</button>
+	</div>
+	</form>
+</div>

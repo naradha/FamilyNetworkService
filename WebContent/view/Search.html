@@ -1,0 +1,12 @@
+<div>
+    <div>
+		<input type="search" name="search" ng-model="search">
+	    <input type="submit" value="search" ng-click="searchUsers()">
+    </div>
+    <div ng-show="searchResult">
+	    Result:
+	    <div ng-repeat="(personId, person) in searchResult">
+	    	<a href="#/user/profile/{{personId}}">{{person.userInfo.firstName}} {{person.userInfo.lastName}}</a>
+	    </div>
+    </div>
+</div>
